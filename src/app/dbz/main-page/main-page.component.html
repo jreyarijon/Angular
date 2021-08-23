@@ -15,17 +15,31 @@
     </div>
 
     <div class="col">
-        <h3>Agregar</h3>
+        <h3>Agregar </h3>
+        <!--<small>{{nuevo.nombre}}</small>-->
         <hr>
 
-        <form>
-            <input type="text" placeholder="Nombre">
-            <input type="number" placeholder="Poder">
+        <!--<form (submit)= "agregar($event)"> Cualquier evento puede ser recogido con $event-->
+        <form (ngSubmit)= "agregar()">
+            <!--Con [] hacemos referencia a una variable que queremos enlazar-->
+            <!--Con [()] escuchamos y emitimos el evento a la vez-->
+            <input 
+            type="text" 
+            placeholder="Nombre"
+            name="nombre"
+            [(ngModel)]="nuevo.nombre"
+            />
+            <!--[value]="nuevo.nombre" 
+                (input)="cambiarNombre( $event )"-->
+            <input 
+            type="number" 
+            placeholder="Poder"
+            [value]="nuevo.poder"
+            />
 
-            <button>
+            <button type="submit">
                 Agregar
             </button>
-
         </form>
     </div>
 </div>
