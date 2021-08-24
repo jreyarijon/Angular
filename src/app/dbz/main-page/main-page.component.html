@@ -5,45 +5,15 @@
 
 
     <div class="col">
-        <app-personajes [data]="personajes">
-            
-        </app-personajes>
-        <!-- <h3>Personajes</h3>
-        <hr>
-        <ul>
-            <li *ngFor="let personaje of personajes">
-                <strong>{{personaje.nombre}}</strong> - <small>{{personaje.poder | number}}</small>
-            </li>
-        </ul> -->
+        <app-personajes 
+        [data]="personajes"
+        ></app-personajes>
     </div>
 
     <div class="col">
-        <h3>Agregar </h3>
-        <!--<small>{{nuevo.nombre}}</small>-->
-        <hr>
-
-        <!--<form (submit)= "agregar($event)"> Cualquier evento puede ser recogido con $event-->
-        <form (ngSubmit)= "agregar()">
-            <!--Con [] hacemos referencia a una variable que queremos enlazar-->
-            <!--Con [()] escuchamos y emitimos el evento a la vez-->
-            <input 
-            type="text" 
-            placeholder="Nombre"
-            name="nombre"
-            [(ngModel)]="nuevo.nombre"
-            />
-            <!--[value]="nuevo.nombre" 
-                (input)="cambiarNombre( $event )"-->
-            <input 
-            type="number" 
-            placeholder="Poder"
-            name="poder"
-            [(ngModel)]="nuevo.poder"
-            />
-
-            <button type="submit">
-                Agregar
-            </button>
-        </form>
+        <app-agregar 
+        [pjs]="personajes"
+        [new]="nuevo"
+        ></app-agregar>
     </div>
 </div>
