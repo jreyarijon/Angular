@@ -4,9 +4,7 @@ import { Personaje } from "../interfaces/dbz.interfaces";
 // Indica que la clase se puede inyectar
 @Injectable()
 export class DbzService {
-    constructor(){
-      console.log('Servicio inicializado');  
-    }
+    constructor() {}
     
      private _personajes: Personaje[] = [
       {
@@ -22,4 +20,8 @@ export class DbzService {
     get personajes(): Personaje[] {
       return [...this._personajes];
     }
+
+    agregarPersonaje( pj: Personaje) {
+      this._personajes.push( pj );
+    } 
 }
