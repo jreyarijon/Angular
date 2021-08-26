@@ -1,7 +1,6 @@
 import { Injectable, Input } from "@angular/core";
 import { Personaje } from "../interfaces/dbz.interfaces";
 
-// Indica que la clase se puede inyectar
 @Injectable()
 export class DbzService {
     constructor() {}

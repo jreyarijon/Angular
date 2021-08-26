@@ -15,14 +15,9 @@ export class AgregarComponent{
     poder: 0
   }
 
-  // @Output('newPj') onNewPersonaje: EventEmitter<Personaje> = new EventEmitter();
-
   agregar(){
     if( this.nuevo.nombre.trim().length === 0 ){ return; }
-    
-    console.log(this.nuevo);
-    // Emitir el objeto entre ()
-    // this.onNewPersonaje.emit(this.nuevo);
+
     this.dbzService.agregarPersonaje( this.nuevo );
 
     this.nuevo = {
